@@ -1,0 +1,8 @@
+@plants.map do |plant|
+  {
+    id: plant.id,
+    Name: plant.name,
+    Water: plant.water,
+    Light: plant.light,
+  }
+end
