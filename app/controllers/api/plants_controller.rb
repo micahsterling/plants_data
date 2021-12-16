@@ -20,4 +20,13 @@ class Api::PlantsController < ApplicationController
     render 'show.json.jb'
   end
 
+  def update
+    @plant = Plant.find_by(id: params[:id])
+    @plant.name = params[:name] || @plant.name
+    @plant.water = params[:water] || @plant.water
+    @plant.light = params[:light] || @plant.light
+    @plant.save
+    render 'show.json.jb'
+  end
+
 end
