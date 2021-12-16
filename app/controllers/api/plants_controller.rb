@@ -10,6 +10,14 @@ class Api::PlantsController < ApplicationController
     render 'show.json.jb'
   end
 
-  def 
+  def create
+    @plants = Plant.new(
+      name: params[:name],
+      Water: params[:water],
+      Light: params[:light],
+    )
+    @plants.save
+    render 'show.json.jb'
+  end
 
 end
